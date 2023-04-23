@@ -1,0 +1,15 @@
+# docker-compose.yml
+version: '3'
+
+services:
+  nextjs:
+    stdin_open:
+      true
+    image: node:16.13.0-alpine
+    container_name: guess_the_number
+    working_dir: /usr/src/app
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - 3000:3000
+      - 8080:8080
